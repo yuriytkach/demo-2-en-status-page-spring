@@ -1,0 +1,110 @@
+/* style.css */
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px; /* Increased padding for larger screen */
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 600px; /* Set fixed width for larger screens */
+    animation: zoomFadeIn 0.6s ease-out;
+}
+
+.ip-address {
+    margin-bottom: 20px;
+}
+
+.ip-value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feels-like, .temperature, .coordinates, .country {
+    margin-bottom: 10px;
+}
+
+.city {
+    margin-bottom: 20px;
+}
+
+.feels-value {
+    font-size: 30px; /* Increased size for "Feels like" value */
+    font-weight: bold;
+}
+
+.temperature-value {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.weather-info .value {
+    margin-left: 10px;
+}
+
+.weather-info .description {
+    font-size: 14px;
+    color: gray;
+}
+
+.weather-info .icon {
+    font-size: 15px;
+    margin-right: 0;
+}
+
+.weather-info i {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+.footer-note {
+    margin-top: 20px;
+    font-size: 10px;
+    color: gray;
+    text-align: right;
+}
+
+/* Added color classes for icons */
+.text-primary {
+    color: #007bff;
+}
+.text-secondary {
+    color: #6c757d;
+}
+.text-success {
+    color: #28a745;
+}
+.text-danger {
+    color: #dc3545;
+}
+.text-warning {
+    color: #ffc107;
+}
+.text-info {
+    color: #17a2b8;
+}
+
+@keyframes zoomFadeIn {
+    from {
+        transform: scale(0.5); /* Start from half the size */
+        opacity: 0; /* Start from fully transparent */
+    }
+    to {
+        transform: scale(1); /* Scale to normal size */
+        opacity: 1; /* Fade to fully opaque */
+    }
+}

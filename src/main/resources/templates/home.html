@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Weather and Location</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="./script.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="ip-address">
+        <i class="fa-solid fa-globe text-primary"></i>
+        <span class="ip-value" th:text="${data.ip}"></span>
+    </div>
+    <div class="weather-info">
+        <div class="feels-like">
+            <i class="fa-solid fa-thermometer-half text-danger"></i>
+            <span class="temperature-label">Feels like</span><br>
+            <span class="feels-value" th:text="${data.apparentTemp}"></span>
+        </div>
+        <div class="temperature">
+            <i class="fa-solid fa-thermometer-three-quarters text-primary"></i>
+            <span class="temperature-label">Temperature</span><br>
+            <span class="temperature-value" th:text="${data.temperature}"></span>
+        </div>
+        <div class="coordinates">
+            <i class="fa-solid fa-map-marked-alt text-success"></i>
+            <span class="value"th:text="${data.lat}"></span><span class="value"th:text="${data.lon}"></span><br>
+
+        </div>
+        <div class="country">
+            <i class="fa-solid fa-flag text-warning icon"></i>
+            <span class="value" th:text="${data.country}"></span><br>
+            <span class="description" th:text="${data.countryDesc}"></span>
+        </div>
+        <div class="city">
+            <i class="fa-solid fa-location-dot text-info icon"></i>
+            <span class="value" th:text="${data.city}"></span><br>
+            <span class="description" th:text="${data.cityDesc}"></span>
+        </div>
+        <div class="updated-time">
+            <i class="fa-solid fa-clock text-secondary icon"></i>
+            <span class="value">Updated <span class="updatedAt" th:text="${data.updatedAt}"></span></span><br>
+            <span class="description updatedAtDesc" th:text="${data.updatedAt}"></span>
+        </div>
+    </div>
+    <div class="footer-note">Running on Spring</div>
+</div>
+</body>
+</html>
